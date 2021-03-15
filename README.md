@@ -1,3 +1,4 @@
+[![](https://img.shields.io/npm/l/jw-f2)](https://www.npmjs.com/package/jw-f2)
 # jw-f2
 > a light chart component based on native @antv/f2 for wechat-miniprogram
 

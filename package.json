@@ -1,6 +1,6 @@
 {
   "name": "jw-f2",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "F2 for wechat-miniprogram",
   "main": "src/core/index.js",
   "scripts": {

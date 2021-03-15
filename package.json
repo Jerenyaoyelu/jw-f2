@@ -2,9 +2,11 @@
   "name": "jw-f2",
   "version": "1.0.0",
   "description": "F2 for wechat-miniprogram",
-  "main": "src/core/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "npx webpack"
+    "copy": "node ./scripts/CopyScript.js",
+    "build": "npm run clean && rollup -c && npm run copy",
+    "clean": "rm -rf dist"
   },
   "keywords": [
     "light"
@@ -13,7 +15,12 @@
   "author": "jeren",
   "license": "ISC",
   "dependencies": {
-    "@antv/f2": "^3.8.3"
+    "@antv/f2": "^3.8.3",
+    "fs-extra": "^9.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "rollup": "^2.41.2"
+  }
 }

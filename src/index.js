@@ -31,7 +31,6 @@ Component({
         const { node, width, height } = res[0];
         const context = node.getContext('2d');
         const pixelRatio = wx.getSystemInfoSync().pixelRatio;
-        // 高清设置
         node.width = width * pixelRatio;
         node.height = height * pixelRatio;
 

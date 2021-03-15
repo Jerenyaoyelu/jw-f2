@@ -2,6 +2,8 @@
 # jw-f2
 > a light chart component based on native @antv/f2 for wechat-miniprogram
 
+<br/>
+
 ## Install
 
 1. Install package: `npm install jw-f2`
@@ -9,6 +11,21 @@
 > - tick `detials -> Use NPM module`
 > - build npm: `tools -> build npm`
 
+<br/>
+
+## Attributes
+
+| Attribute  | Description | Compulsory | Type | Default |
+|----|---|---|---|---|
+| id | id of canvas | No | String | __jw-f2-canvas |
+
+## Events
+
+| Attribute  | Description | Compulsory | Type | Default |
+|----|---|---|---|---|
+|  onRender  | render chart function | Yes | Function | - |
+
+<br/>
 
 ## Usage
 
@@ -96,6 +113,9 @@ Component({
   height: 500rpx;
 }
 ```
+
+<br/>
+
 ### Use in a page
 > BasicRadarChart in a page
 1. index.js
@@ -175,6 +195,8 @@ Page({
   height: 500rpx;
 }
 ```
+
+<br/>
 
 ## A list of examples >> [jw-f2-examples](https://github.com/Jerenyaoyelu/jw-f2-examples)
 

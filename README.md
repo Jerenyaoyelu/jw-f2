@@ -175,3 +175,10 @@ Page({
   height: 500rpx;
 }
 ```
+
+## A list of examples >> [jw-f2-examples](https://github.com/Jerenyaoyelu/jw-f2-examples)
+
+## Support this project
+- Buy me a coffee
+
+<span><img src="./assets/wcp.jpeg" width="200" height="300" /> <img src="./assets/alp.jpeg" width="200" height="300"/> </span>

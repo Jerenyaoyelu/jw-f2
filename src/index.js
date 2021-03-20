@@ -1,4 +1,9 @@
-import F2 from '@antv/f2';
+// import F2 from '@antv/f2';
+import F2 from '@antv/f2/lib/index-all';
+// import F2 from "./lib/f2-all"
+
+import ScrollBar from '@antv/f2/lib/plugin/scroll-bar';
+
 
 function wrapEvent(e) {
   if (!e) return;
@@ -21,6 +26,7 @@ Component({
   },
   lifetimes: {
     ready() {
+      F2.Chart.plugins.register(ScrollBar);
       const query = wx.createSelectorQuery().in(this);
       query.select(`#${this.properties.id}`)
       .fields({
@@ -45,24 +51,23 @@ Component({
   methods: {
     touchStart(e) {
       const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
-      }
+      if (!canvasEl) return;
       canvasEl.dispatchEvent('touchstart', wrapEvent(e));
     },
     touchMove(e) {
       const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
-      }
+      if (!canvasEl) return;
       canvasEl.dispatchEvent('touchmove', wrapEvent(e));
     },
     touchEnd(e) {
       const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
-      }
+      if (!canvasEl) return;
       canvasEl.dispatchEvent('touchend', wrapEvent(e));
+    },
+    press(e) {
+      const canvasEl = this.canvasEl;
+      if (!canvasEl) return;
+      canvasEl.dispatchEvent('press', wrapEvent(e));
     }
   }
 })

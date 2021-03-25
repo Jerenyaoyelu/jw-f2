@@ -127,51 +127,49 @@ Page({
     chartData: []
   },
   ... //get your chart data
-  methods: {
-    renderChart(e) {
-      const {F2, config, that} = e.detail;
-      if(!F2 || !config || !that) return;
-      const chart = new F2.Chart(config);
-      chart.coord('polar');
-      chart.source(this.properties.chartData, {
-        score: {
-          min: 0,
-          max: 5,
-          nice: false,
-          tickInterval: 1
-        }
-      });
-      chart.axis('score', {
-        label: false,
-        line: null,
-        tickLine: null,
-        grid: {
-          stroke: '#999',
-          line: {
-            style: {
-              lineDash: null
-            }
+  renderChart(e) {
+    const {F2, config, that} = e.detail;
+    if(!F2 || !config || !that) return;
+    const chart = new F2.Chart(config);
+    chart.coord('polar');
+    chart.source(this.properties.chartData, {
+      score: {
+        min: 0,
+        max: 5,
+        nice: false,
+        tickInterval: 1
+      }
+    });
+    chart.axis('score', {
+      label: false,
+      line: null,
+      tickLine: null,
+      grid: {
+        stroke: '#999',
+        line: {
+          style: {
+            lineDash: null
           }
         }
+      }
+    });
+    chart.axis('stack', {
+      line: null,
+      tickLine: null,
+      grid: {
+        lineDash: null,
+        stroke: '#999'
+      }
+    });
+    chart.line().position('stack*score').color('type').size(2);;
+    chart.point().position('stack*score').color('type').size(4)
+      .style({
+        stroke: '#fff',
+        lineWidth: 1
       });
-      chart.axis('stack', {
-        line: null,
-        tickLine: null,
-        grid: {
-          lineDash: null,
-          stroke: '#999'
-        }
-      });
-      chart.line().position('stack*score').color('type').size(2);;
-      chart.point().position('stack*score').color('type').size(4)
-        .style({
-          stroke: '#fff',
-          lineWidth: 1
-        });
-      chart.render();
-      that.chart = chart;
-      that.canvasEl = chart.get('el');
-    }
+    chart.render();
+    that.chart = chart;
+    that.canvasEl = chart.get('el');
   }
 })
 ```
